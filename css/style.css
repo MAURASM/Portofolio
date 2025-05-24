@@ -1,0 +1,598 @@
+/********** Template CSS **********/
+:root {
+    --primary: #adefd1;   /* dari ungu jadi toska muda */
+    --secondary: #FFC448;
+    --light: #FAFAFB;
+    --dark: #12141D;
+}
+
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+body {
+    background-color: #00203F;
+}
+
+
+.my-6 {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+
+.py-6 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*** Button ***/
+.btn {
+    font-weight: 500;
+    transition: .5s;
+}
+
+.btn.btn-primary {
+    background-color: #adefd1 !important;
+    color: #12141D; /* opsional: teks gelap agar kontras */
+    border: none;
+}
+
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+
+
+/*** Navbar ***/
+.navbar.fixed-top {
+    display: none;
+    transition: .5s;
+}
+
+.navbar .navbar-nav .nav-link {
+    padding: 20px 15px;
+    color: var(--dark);
+    font-size: 18px;
+    font-weight: 600;
+    outline: none;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+@media (max-width: 991.98px) {
+    .navbar .navbar-nav .nav-link  {
+        padding: 10px 0;
+    }
+}
+
+
+/*** Header ***/
+#home {
+    height: 100vh; /* bikin tinggi jadi 1 layar */
+    background: url(../img/header.png) left top no-repeat;
+
+    display: flex;
+    align-items: center; /* konten di tengah vertikal */
+}
+
+.full-height-img {
+    max-height: 100%;
+    height: auto;
+    align-self: flex-end;
+    margin-bottom: -180px; /* Sesuaikan sesuai kebutuhan */
+}
+
+
+.typed-cursor {
+    font-size: 30px;
+    color: var(--dark);
+}
+
+.btn-play {
+    position: relative;
+    display: block;
+    box-sizing: content-box;
+    width: 16px;
+    height: 26px;
+    border-radius: 100%;
+    border: none;
+    outline: none !important;
+    padding: 18px 20px 20px 28px;
+    background: var(--primary);
+}
+
+.btn-play:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: var(--primary);
+    border-radius: 100%;
+    animation: pulse-border 1500ms ease-out infinite;
+}
+
+.btn-play:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: #FFFFFF;
+    border-radius: 100%;
+    transition: all 200ms;
+}
+
+.btn-play span {
+    display: block;
+    position: relative;
+    z-index: 3;
+    width: 0;
+    height: 0;
+    left: -1px;
+    border-left: 16px solid var(--primary);
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+}
+
+@keyframes pulse-border {
+    0% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(2);
+        opacity: 0;
+    }
+}
+
+.modal-video .modal-dialog {
+    position: relative;
+    max-width: 800px;
+    margin: 60px auto 0 auto;
+}
+
+.modal-video .modal-body {
+    position: relative;
+    padding: 0px;
+}
+
+.modal-video .close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 0px;
+    top: -30px;
+    z-index: 999;
+    font-size: 30px;
+    font-weight: normal;
+    color: #FFFFFF;
+    background: #000000;
+    opacity: 1;
+}
+
+/* Media queries untuk responsiveness */
+@media (max-width: 991px) {
+    #home .col-lg-6:first-child {
+        padding-top: 2rem;
+    }
+    
+    #home .col-lg-6:last-child {
+        padding-top: 1rem;
+    }
+    
+    .full-height-img {
+        max-height: 60vh;
+    }
+}
+
+/*** About ***/
+
+#about h5 {
+    color: #ffffff;
+}
+#about h6 {
+    color: #ffffff;
+}
+
+#about h1 {
+    color: #adefd1;
+}
+
+.feature-text {
+    text-align: justify; /* Untuk meratakan teks */
+    color: #ffffff; 
+}
+
+/*** Skills ***/
+#skill h1 {
+    color: #adefd1;
+}
+
+#skill h3 {
+    color: #ffffff;
+}
+
+#skill h6 {
+    color: #ffffff;
+}
+
+#skill h5 {
+    color: #adefd1;
+}
+
+#skill .progress {
+    height: 5px;
+    border-radius: 5px;
+    
+}
+
+.edu-logo img {
+    border-radius: 12px;
+}
+
+  
+
+#skill .progress .progress-bar {
+    width: 0px;
+    border-radius: 5px;
+    transition: 3s;
+}
+
+#skill .nav-pills .nav-link {
+    color: #adefd1;
+    
+}
+
+#skill .nav-pills .nav-link.active {
+    color: #00203F;
+    background-color: #adefd1;
+}
+
+#skill .tab-content hr {
+    width: 30px;
+}
+.text-p {
+    color: white;
+  }
+  
+
+
+/*** Service ***/
+.service-item .bg-icon {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../img/bg-icon.png) center center no-repeat;
+    background-size: cover;
+}
+
+.text-justify {
+    text-align: justify;
+    color: #00203F /* atau sesuai kebutuhan */
+}
+
+
+
+/*** Project Portfolio ***/
+
+#project h1 {
+    color: #adefd1;
+}
+
+#portfolio-flters li {
+    display: block;       /* atau inline-block juga bisa, tapi block lebih baik di flex container */
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    transition: .5s;
+    border-bottom: 2px solid transparent;
+}
+
+
+#portfolio-flters li:hover,
+#portfolio-flters li.active {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+#portfolio-flters {
+    display: flex !important;          /* paksa flex */
+    justify-content: flex-end !important; /* paksa rata kanan */
+    align-items: center;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    gap: 1rem;
+    text-align: initial !important; /* override text-align tengah jika ada */
+  }
+  
+
+.portfolio-img {
+    position: relative;
+}
+
+.portfolio-btn {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(173, 239, 209, 0.5);
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 30px;
+    padding-bottom: 100px !important;
+    opacity: 0;
+    transition: .5s;
+}
+
+.portfolio-item:hover .portfolio-btn {
+    opacity: 1;
+    padding-bottom: 30px !important;
+}
+
+
+/*** Team ***/
+.team-item img {
+    transition: .5s;
+}
+
+.team-item:hover img {
+    opacity: .7;
+}
+
+.team-item .team-text {
+    position: absolute;
+    left: 0;
+    right: 60px;
+    bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0;
+    transition: .5s;
+}
+
+.team-item:hover .team-text {
+    right: 30px;
+    opacity: 1;
+}
+
+.team-item .team-text div {
+    transition: .5s;
+}
+
+.team-item:hover .team-text div {
+    margin-left: 30px;
+}
+
+
+/*** Testimonial ***/
+.testimonial-left,
+.testimonial-right {
+    position: relative;
+}
+
+.testimonial-left img,
+.testimonial-right img {
+    position: absolute;
+    padding: 5px;
+    border: 1px solid var(--secondary);
+    border-radius: 70px;
+}
+
+.testimonial-left img:nth-child(1),
+.testimonial-right img:nth-child(3) {
+    width: 70px;
+    height: 70px;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.testimonial-left img:nth-child(2),
+.testimonial-right img:nth-child(2) {
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+}
+
+.testimonial-left img:nth-child(3),
+.testimonial-right img:nth-child(1) {
+    width: 50px;
+    height: 50px;
+    bottom: 10%;
+    right: 10%;
+}
+
+.testimonial-carousel .owl-item img {
+    width: 120px;
+    height: 120px;
+}
+
+.testimonial-carousel .testimonial-icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 50%;
+    bottom: -15px;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border: 1px solid var(--secondary);
+    border-radius: 60px;
+}
+
+.testimonial-carousel .owl-dots {
+    height: 40px;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-carousel .owl-dot {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    width: 30px;
+    height: 30px;
+    background: #FFFFFF;
+    border: 2px solid var(--secondary);
+    border-radius: 30px;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-dot::after {
+    position: absolute;
+    content: "";
+    width: 16px;
+    height: 16px;
+    top: 5px;
+    left: 5px;
+    border-radius: 16px;
+    background: var(--secondary);
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-dot.active::after {
+    background: var(--primary);
+}
+
+/* Bagian utama latar belakang putih */
+.contact-section {
+    background-color: #ffffff;
+    padding: 60px 0;
+}
+
+/* Heading besar */
+.contact-section h1 {
+    color: #00203F;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* Subjudul kecil seperti "Phone", "Email" */
+.contact-section h6 {
+    color: #00203F;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/* Detail informasi kontak */
+.contact-section .contact-info h5 {
+    color: #00203F;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+/* LinkedIn link */
+.contact-section .contact-info a {
+    color: #00203F;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+/* Gambar dengan border, radius, dan latar hijau di belakang */
+.contact-image-wrapper {
+    position: relative;
+    display: inline-block;
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.contact-image-wrapper::before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    bottom: -20px;
+    background-color: #b8fbd5;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    border-radius: 20px;
+}
+
+.contact-image {
+    position: relative;
+    z-index: 1;
+    border: 5px solid #00203F;
+    border-radius: 20px;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.last img {
+    border-radius: 12px;
+    width: 50%; /* gambar akan setengah dari lebar container */
+    height: auto;
+}
+
+.text-primary {
+    color: #adefd1 !important;
+  }
+  
